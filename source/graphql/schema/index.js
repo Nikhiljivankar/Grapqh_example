@@ -27,4 +27,3 @@ const {
   });
   
   module.exports =schema;
-  

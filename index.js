@@ -10,6 +10,8 @@ require('./config');
 // import mysql from './source/connectors/mysql';
 const mongo  =require('./source/connectors/mongo');
 const schema =require('./source/graphql/schema');
+const cronjob = require('./source/cron job/cron');
+
 
 const debug = debugFactory('server:main');
 
@@ -28,6 +30,8 @@ app.use(
 );
 // app.use('/tailorodo', router());
 app.use("/api/v1/order", require("./source/REST/router/order"));
+cronjob();
+
 
 async function startApolloServer() {
 
